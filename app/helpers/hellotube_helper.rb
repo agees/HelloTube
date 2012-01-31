@@ -1,0 +1,2 @@
+module HellotubeHelper
+end

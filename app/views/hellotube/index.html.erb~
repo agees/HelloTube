@@ -1,0 +1,21 @@
+<html>
+<head>
+	<title>HelloTube</title>
+	<%= stylesheet_link_tag "http://twitter.github.com/bootstrap/1.4.0/bootstrap.min.css" %>
+</head>
+<body>
+<table class="zebra-striped">
+	<div class="row">
+	<% @videos.each do |video| -%>
+		<table class="zebra-striped">
+		<object width="170" height="142">
+			<param name="movie" value="<%=h video.embed_url%>"></param>
+			<param name="wmode" value="transparent"></param>
+			<embed src="<%=h video.embed_url%>" type="application/x-shockwave-flash" wmode="transparent" width="170" height="142"></embed>
+		</object>
+	<% end %>
+        </div>
+</table>
+</body>
+</html>
+
