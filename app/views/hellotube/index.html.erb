@@ -1,3 +1,4 @@
+# encoding: utf-8
 <html>
 <head>
   <title>HelloTube</title>
@@ -35,11 +36,20 @@
         </div>
       </div>
       <div class="content">
-        <div class="row">
+          <div class="row">
+                <div id="MooFlow">
+                <% @videos.each do |video| -%>
+                  <div id="images">      
+                    <img src="<%=h video.thumbnails[0].url%>" height="<%=h video.thumbnails[0].height%>" width="<%=h video.thumbnails[0].width%>">
+                  </div>
+                <% end %>
+                <div id="captions"></div>
+          </div>
         </div>
 
         <footer>
-          <p>&copy; tkmrkt 2011</p>
+          <p>&copy; tkmrkt 2011 </p>
+          <%= @someJapanese %>
         </footer>
       </div>
     </div>
