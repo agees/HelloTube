@@ -1,4 +1,6 @@
 HelloTube::Application.routes.draw do
+  resources :videolists
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

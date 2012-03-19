@@ -9,14 +9,16 @@
     window.addEvent('domready', function(){
      
       var mf = new MooFlow($('MooFlow'), {
-        startIndex: 5,
+        startIndex: 0,
         useSlider: true,
         useAutoPlay: true,
         useCaption: true,
         useResize: true,
         useWindowResize: true,
         useMouseWheel: true,
-        useKeyInput: true
+        useKeyInput: true,
+        heightRatio: 0.2,
+        offsetY: -250
       });
      
     });

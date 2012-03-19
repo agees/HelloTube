@@ -1,4 +1,5 @@
 # encoding: utf-8
+
   <div class="navbar navbar-fixed-top">
     <div class="navbar-inner">
       <div class="container-fluid">
@@ -19,35 +20,34 @@
       </div>
     </div>
   </div>
-
+  <br/>
+  <br/>
+  <br/>
   <div class="container-fluid">
     <div class="row-fluid">
-      <div class="span3">
+      <div class="span7">
         <div class="well sidebar-nav">
-          <% @videos.each do |video| -%>
-          <li class="nav-header"><%= video.title %></li>
+          <h2><%=h @videotitle %></h2>
           <ul>
-            <object width="170" height="142">
-              <param name="movie" value="<%=h video.embed_url%>"></param>
+            <object width="500" height="350">
+              <param name="movie" value="<%=h @videourl%>"></param>
               <param name="wmode" value="transparent"></param>
-              <embed src="<%=h video.embed_url%>" type="application/x-shockwave-flash" wmode="transparent" width="170" height="142"></embed>
+              <embed src="<%=h @videourl %>" type="application/x-shockwave-flash" wmode="transparent" width="500" height="350"></embed>
             </object>
           </ul>
-          <% end %>
         </div>
       </div>
-      <div class="span9">
-        <div class="row-fluid">
-          <div id="MooFlow">
-            <% @videos.each do |video| -%>
-            <div><img src="<%=h video.thumbnails[0].url%>" height="<%=h video.thumbnails[0].height%>" width="<%=h video.thumbnails[0].width%>"></div>
-            <% end %>
-          </div>
+      <div class="span5">
+        <div class="well sidebar-nav">
+          <p><%=h @videodesc %></p>
         </div>
       </div>
-      <footer>
-        <p>&copy; hellotube 2012 </p>
-      </footer>
     </div>
   </div>
-
+  <div class="navbar navbar-fixed-bottom">
+    <div id="MooFlow">
+      <% @videos.each do |video| -%>
+      <div><img src="<%=h video.thumbnails[0].url%>" title="<%=h video.title %>"></div>
+      <% end %>
+    </div>
+  </div>
